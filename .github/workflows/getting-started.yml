@@ -18,12 +18,12 @@ jobs: # this is where you define what you want to happen
     createOutput:
         runs-on: ubuntu-latest
         outputs:
-            mString: ${{ steps.set-out.outputs.mString}}
+            mString: ${{ steps.set-output.outputs.mString}}
         
         steps:
-            - id: set-out
+            - id: set-output
               run: |
-                echo "::set-out name=mString::'Hello world'"
+                echo "::set-output name=mString::'Hello world'"
 
     useOutput: 
         runs-on: ubuntu-latest
