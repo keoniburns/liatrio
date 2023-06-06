@@ -15,4 +15,6 @@ jobs: # this is where you define what you want to happen
 
         steps: # defining steps
             - name: run a one-line script
-              run: echo password
+              with: 
+                secret: ${{ secrets.SECRET_PASS}}
+              run: echo secret
