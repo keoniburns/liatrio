@@ -15,9 +15,10 @@ jobs: # this is where you define what you want to happen
             - name: run single line script
               run: echo ${{ secrets.SECRET_PASS }}
 
-    createOutput: #creatingo our output string for use
+    createOutput: #creating our output string for use
         runs-on: ubuntu-latest
 
+        steps: 
         - run: mkdir -p ./artifact/
         - run: echo "hello world" > ./artifact/foo.txt
 
@@ -46,9 +47,9 @@ jobs: # this is where you define what you want to happen
 
         steps:
         - uses: actions/download-artifact@v3
-              with:
-                name: my-artifact
-                path: ./artifact/foo.txt
+          with:
+            name: my-artifact
+            path: ./artifact/foo.txt
 
-            - run: |
+        - run: |
                 echo "${{steps.my-artifact}}-${{matrix.vars}}"
