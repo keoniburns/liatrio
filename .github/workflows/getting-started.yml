@@ -30,8 +30,8 @@ jobs: # this is where you define what you want to happen
         needs: [createOutput]
         strategy:
             matrix:
-                output: ${{needs.createOutput.outputs.mString}}
-                version: [1,2,3,4,5,6,7,8,9,10]
+                out: ${{needs.createOutput.outputs.mString}}
+                vars: [1,2,3,4,5,6,7,8,9,10]
 
         steps:
-            - run: ${{matrix.output}}
+            - run: ${{matrix.out}}
