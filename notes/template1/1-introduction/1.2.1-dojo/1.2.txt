@@ -1,0 +1,18 @@
+# 1.2 liatrio and DevOps
+
+* Boots on the ground
+  - team is on-site 
+
+* Goals
+  - quickly assess and understand issues with code. fix issues promptly while maintaining code integrity
+  - automation of source code management and build servers
+  - code should be ready for production even if it isn't being pushed out 
+  - agile mindset
+
+# 1.2.1 dojo
+
+* what it is 
+  - basically a place where we can teach our clients how to accelerate their deliverable deployment
+  - additionally, we want to enable a change in mindset and behaviors for the team and leadership
+  - break pre-existing constraints through 
+  - 

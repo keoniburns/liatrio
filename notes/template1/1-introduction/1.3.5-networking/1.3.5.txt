@@ -1,0 +1,12 @@
+NETWORKING
+
+* ip addrs
+  - ipv4 and ipv6
+  - ipv4 is the most common 
+  - local host is always 127.0.0.1
+
+* ports 
+  - numbers to tell where endpoints should be listening
+
+* private ip ranges
+  - some ip ranges dont allow public hosts to use

@@ -1,0 +1,8 @@
+inet 192.168.0.113 netmask 0xffffff00 broadcast 192.168.0.255
+24 subnet mask
+255 - 2 
+
+public ip 2603:3006:9:1200:648f:2ed4:ac73:52d5
+dhcp gives us one because it just do
+the subnet allows hosts and routers to know which network we are requesting from
+

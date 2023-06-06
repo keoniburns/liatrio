@@ -1,0 +1,30 @@
+FEATURES
+
+* issues
+  - ticketing feature used to keep track of to-do's
+  - labels
+  - who was assigned 
+  - milestones 
+  
+* actions 
+  - creates workflow to perform specific actions on trigger 
+	> compile/build app
+	> testing
+  - promotes code-reuse through custom actions
+  - reusable workflows
+
+* Projects 
+  - organizational tool that uses github issues to track work effectively
+  - kanban boards 
+  - sub-sections of kanban board 
+  - create custom views
+
+* pages 
+  - you can post websites that use html, CSS, and javascript in your repo
+
+* security
+  - dependabot
+	> alerts you if you have deprecated dependencies or any valuable data in your code
+
+* API 
+  - 

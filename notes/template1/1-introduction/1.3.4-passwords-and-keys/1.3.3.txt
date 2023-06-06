@@ -1,0 +1,12 @@
+* security best practices
+  - use longer passwords, min 8 chars 
+  - upper lower and specials
+  - no dictionary words 
+  - diff passwords for every acct 
+  - change pass occasionally 
+
+* keePass
+  - useful for password management 
+* lastpass
+* 1Password
+

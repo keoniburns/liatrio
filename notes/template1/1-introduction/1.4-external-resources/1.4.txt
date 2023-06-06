@@ -1,0 +1,22 @@
+* what is terraform
+  - open source infrastructure as code 
+  - uses golang
+  - allows users to create modify and destroy resources across multiple cloud providers using a single workflow
+
+* use cases 
+  - multi-cloud management
+  - the creation and removal of environments
+	> development, testing, staging, and production
+	> terraform allows for all stages to be configured easily
+  - CI/CD
+	> used as a pipeline to automate deployment, provisioning, and infrastructure management
+	> ensures that infrastructure is always in sync with latest changes 
+  - PaaS tools ? 
+
+* why use terraform
+  - disaster recovery 
+	> removes the need for manual configuration
+  - increases safety
+	> reduces risk of human error 
+	> compliance req's (PCI-DSS, HIPAA, GDPR)
+
