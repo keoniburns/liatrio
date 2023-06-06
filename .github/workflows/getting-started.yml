@@ -15,6 +15,6 @@ jobs: # this is where you define what you want to happen
 
         steps: # defining steps
             - name: run a one-line script
-              with: 
+              env: 
                 secret: ${{ secrets.SECRET_PASS}}
               run: echo secret
