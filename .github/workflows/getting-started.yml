@@ -12,13 +12,10 @@ jobs: # this is where you define what you want to happen
         runs-on: ubuntu-latest # specify ehat os it should run on
 
         steps: # defining steps
-            - uses: actions/upload-artifact@v3
-              with:
-                name: my-artifact
-            - name: run a one-line script
+            - name: run single line script
               run: echo ${{ secrets.SECRET_PASS }}
 
-    # createOutput: #creatingo our output string for use
+    createOutput: #creatingo our output string for use
         runs-on: ubuntu-latest
 
         - run: mkdir -p ./artifact/
@@ -39,7 +36,7 @@ jobs: # this is where you define what you want to happen
 
     useOutput: 
         runs-on: ubuntu-latest
-        # needs: [createOutput]
+        needs: [createOutput]
             
 
         
@@ -51,7 +48,7 @@ jobs: # this is where you define what you want to happen
         - uses: actions/download-artifact@v3
               with:
                 name: my-artifact
-                path: ~/artifacts/foo.txt
+                path: ./artifact/foo.txt
 
             - run: |
                 echo "${{steps.my-artifact}}-${{matrix.vars}}"
