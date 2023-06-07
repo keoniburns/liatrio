@@ -8,7 +8,7 @@ on:
 
     outputs:
       random-string:
-        value: ${{ steps.random-string-generator.outputs.random-string}}
+        value: ${{ steps.random-string-gen.outputs.random-string}}
       
     runs:
       using: "composite"
