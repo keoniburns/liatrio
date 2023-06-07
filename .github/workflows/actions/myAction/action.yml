@@ -8,13 +8,15 @@ on:
 
     outputs:
       random-string:
-        value: ${{ steps.random-string-gen.outputs.random-string}}
+        value: ${{ steps.random-string-gen.outputs.random-string }} 
       
     runs:
       using: "composite"
       steps:
         - id: random-string-gen
-          run: echo "ranodm-string=${{ inputs.mString }}-${{ github.run_number}}-${{ github.run_attempt }}" >> $GITHUB_OUTPUT
+          run: |
+            echo "ranodm-string=${{ inputs.mString }}-${{ github.run_number}} >> $GITHUB_OUTPUT
+          shell: bash
         - run: |
             echo "${{ github.action_path }}" >> $GITHUB_PATH
   
