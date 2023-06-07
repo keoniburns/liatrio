@@ -8,6 +8,7 @@ jobs:
     call-other-workflow:
         runs-on: self-hosted
         steps:
+            - uses: actions/checkout@v2
             - name: calling other workflow
               uses: ./.github/workflows/
             - run: |

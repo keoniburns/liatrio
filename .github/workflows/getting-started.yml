@@ -5,7 +5,7 @@ on:
     #this is the trigger
     workflow_call:
         #specifies which branches this is executed on
-        branches: ["master"]
+        # branches: ["master"]
 
 jobs: # this is where you define what you want to happen
     simple: # job name
