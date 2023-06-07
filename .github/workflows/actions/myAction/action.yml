@@ -1,5 +1,5 @@
-on:
-  workflow_call:
+# on:
+  # workflow_call:
     name: 'create random string from input'
     inputs:
       mString:
@@ -13,6 +13,9 @@ on:
     runs:
       using: "composite"
       steps:
+        - run: |
+            echo ${{inputs.mString}}
+
         - id: random-string-gen
           run: |
             echo "random-string=${{ inputs.mString }}-${{ github.run_number}} >> $GITHUB_OUTPUT
