@@ -1,0 +1,14 @@
+name: reusability test
+
+on:
+    push:
+        branches: ["master"]
+
+jobs:
+    call-other-workflow:
+        runs-on: self-hosted
+        steps:
+            - name: calling other workflow
+              uses: ./.github/workflows/exercise2.yml
+            - run: |
+                echo the workflow has been reused

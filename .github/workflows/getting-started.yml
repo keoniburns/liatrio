@@ -3,7 +3,7 @@ name: CI
 #this only occurs on the specified trigger below
 on:
     #this is the trigger
-    push:
+    workflow_call:
         #specifies which branches this is executed on
         branches: ["master"]
 
@@ -18,22 +18,13 @@ jobs: # this is where you define what you want to happen
     createOutput: #creating our output string for use
         runs-on: self-hosted
         steps: 
-        # - run: mkdir -p ./artifacts/
         - run: echo "hello world" > foo.txt
 
         - uses: actions/upload-artifact@v3
           with:
             name: my-artifact
             path: foo.txt
-            
-        # outputs:
-        #     mString: ${{ steps.set-output.outputs.mString}}
         
-        # steps:
-        #     - id: set-output
-        #       run: |
-        #         echo "::set-output name=mString::Hello world"
-
     useOutput: 
         runs-on: self-hosted
         needs: [createOutput]
@@ -46,11 +37,7 @@ jobs: # this is where you define what you want to happen
         - uses: actions/download-artifact@v3
           with:
             name: my-artifact
-            # path: foo.txt
-
-        # - run: |
-        #         echo "${{steps.name}}-${{matrix.vars}}"
-
+            
         - run: | 
             value=`cat foo.txt`
             echo $value - ${{matrix.vars}}

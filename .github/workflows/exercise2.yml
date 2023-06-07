@@ -1,10 +1,10 @@
-name: ex2
+name: ex2-reusable
 #this only occurs on the specified trigger below
 on:
     #this is the trigger
-    push:
+    workflow_call:
         #specifies which branches this is executed on
-        branches: ["master"]
+        # branches: ["master"]
 
 jobs:
     passIn:
@@ -16,7 +16,7 @@ jobs:
             - uses: actions/checkout@v2
             - name: giving the action the string
               id: foo
-              uses: keoniburns/liatrio/.github/workflows/actions/myAction@master
+              uses: ./.github/workflows/actions/myAction
               with:
                 mString: "im being passed"
             - id: set-output
