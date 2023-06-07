@@ -1,0 +1,85 @@
+name: ex2
+
+#this only occurs on the specified trigger below
+on:
+    #this is the trigger
+    push:
+        #specifies which branches this is executed on
+        branches: ["master"]
+
+# jobs: 
+
+    # this is where you define what you want to happen
+    # simple: # job name
+    #     runs-on: self-hosted # specify ehat os it should run on
+
+    #     steps: # defining steps
+    #         - name: run single line script
+    #           run: echo ${{ secrets.SECRET_PASS }}
+
+    # createOutput: #creating our output string for use
+    #     runs-on: self-hosted
+    #     steps: 
+    #     # - run: mkdir -p ./artifacts/
+    #     - run: echo "hello world" > foo.txt
+
+    #     - uses: actions/upload-artifact@v3
+    #       with:
+    #         name: my-artifact
+    #         path: foo.txt
+            
+        # outputs:
+        #     mString: ${{ steps.set-output.outputs.mString}}
+        
+        # steps:
+        #     - id: set-output
+        #       run: |
+        #         echo "::set-output name=mString::Hello world"
+
+    # useOutput: 
+    #     runs-on: self-hosted
+    #     needs: [createOutput]
+        
+    #     strategy:
+    #         matrix:
+    #             vars: [1,2,3,4,5,6,7,8,9,10]
+
+    #     steps:
+    #     - uses: actions/download-artifact@v3
+    #       with:
+    #         name: my-artifact
+    #         # path: foo.txt
+
+    #     - run: | 
+    #         value=`cat foo.txt`
+    #         echo $value - ${{matrix.vars}}
+    #     - run: ex2.sh
+    #       shell: bash 
+
+jobs:
+    passIn:
+        runs-on: self-hosted
+        name: passing in our string input
+        steps:
+            - uses: actions/checkout@v3
+            - id: foo
+              uses: actions/myAction@v1
+              with:
+                mString: 'im being passed'
+            - run: |
+                echo "random-string=${{steps.foo.outputs.random-string}}" >> $GITHUB_OUTPUT
+
+    display:
+        runs-on: self-hosted
+        needs: [passIn]
+
+        strategy:
+            matrix:
+                vars: [1,2,3,4,5,6,7,8,9,10]
+        steps:
+            - run: |
+                echo "${{needs.passIn.outputs}}-${{matrix.vars}}"
+
+            
+
+
