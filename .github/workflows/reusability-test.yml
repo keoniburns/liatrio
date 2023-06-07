@@ -10,6 +10,6 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - name: calling other workflow
-              uses: ./.github/workflows/
+              uses: ./.github/workflows/actions/reusablewf
             - run: |
                 echo the workflow has been reused
