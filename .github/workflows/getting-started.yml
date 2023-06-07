@@ -25,7 +25,7 @@ jobs: # this is where you define what you want to happen
         - uses: actions/upload-artifact@v3
           with:
             name: my-artifact
-            path: ./artifact/foo.txt
+            path: foo.txt
             
         # outputs:
         #     mString: ${{ steps.set-output.outputs.mString}}
@@ -38,8 +38,6 @@ jobs: # this is where you define what you want to happen
     useOutput: 
         runs-on: ubuntu-latest
         needs: [createOutput]
-            
-
         
         strategy:
             matrix:
@@ -49,7 +47,11 @@ jobs: # this is where you define what you want to happen
         - uses: actions/download-artifact@v3
           with:
             name: my-artifact
-            path: ./artifact/foo.txt
+            path: foo.txt
 
-        - run: |
-                echo "${{steps.my-artifact}}-${{matrix.vars}}"
+        # - run: |
+        #         echo "${{steps.name}}-${{matrix.vars}}"
+
+        - run: | 
+            val = `cat my-artifact`
+            echo $val-${{matrix.vars}}
