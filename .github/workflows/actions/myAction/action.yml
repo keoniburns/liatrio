@@ -15,6 +15,6 @@ on:
       steps:
         - id: random-string-gen
           run: |
-            echo "ranodm-string=${{ mString }}-${{ github.run_number}} >> $GITHUB_OUTPUT
+            echo "random-string=${{ inputs.mString }}-${{ github.run_number}} >> $GITHUB_OUTPUT
           shell: bash
   
