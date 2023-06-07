@@ -62,7 +62,8 @@ jobs:
         name: passing in our string input
         steps:
             - uses: actions/checkout@v2
-            - id: foo
+            - name: giving the action the string
+              id: foo
               uses: ./.github/workflows/actions/myAction
               with:
                 mString: 'im being passed'
