@@ -35,7 +35,7 @@ jobs:
                 vars: [1,2,3,4,5,6,7,8,9,10]
         steps:
             - run: |
-                echo ${{needs.passIn.outputs.rando}}-${{matrix.vars}}
+                echo ${{needs.passIn.outputs.randomString}}-${{matrix.vars}}
 
             
 
