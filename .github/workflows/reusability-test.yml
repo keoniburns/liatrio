@@ -9,6 +9,6 @@ jobs:
         runs-on: self-hosted
         steps:
             - name: calling other workflow
-              uses: ./.github/workflows/exercise2.yml
+              uses: ./.github/workflows/
             - run: |
                 echo the workflow has been reused
