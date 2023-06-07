@@ -15,6 +15,7 @@
       steps:
         - run: |
             echo ${{inputs.mString}}
+          shell: bash
 
         - id: random-string-gen
           run: |
