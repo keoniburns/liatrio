@@ -19,13 +19,13 @@ jobs: # this is where you define what you want to happen
         runs-on: ubuntu-latest
 
         steps: 
-        - run: mkdir -p ./artifacts/
-        - run: echo "hello world" > ./artifacts/foo.txt
+        # - run: mkdir -p ./artifacts/
+        - run: echo "hello world" > foo.txt
 
         - uses: actions/upload-artifact@v3
           with:
             name: my-artifact
-            path: ./artifacts/foo.txt
+            path: foo.txt
             
         # outputs:
         #     mString: ${{ steps.set-output.outputs.mString}}
@@ -47,11 +47,11 @@ jobs: # this is where you define what you want to happen
         - uses: actions/download-artifact@v3
           with:
             name: my-artifact
-            path: ./artifacts/foo.txt
+            # path: foo.txt
 
         # - run: |
         #         echo "${{steps.name}}-${{matrix.vars}}"
 
         - run: | 
-            val = `cat ./artifacts/foo.txt`
+            val = `cat foo.txt`
             echo $val-${{matrix.vars}}
