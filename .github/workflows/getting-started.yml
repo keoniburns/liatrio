@@ -16,8 +16,7 @@ jobs: # this is where you define what you want to happen
               run: echo ${{ secrets.SECRET_PASS }}
 
     createOutput: #creating our output string for use
-        runs-on: ubuntu-latest
-
+        runs-on: [self-hosted, macOS, x64]
         steps: 
         # - run: mkdir -p ./artifacts/
         - run: echo "hello world" > foo.txt
@@ -36,7 +35,7 @@ jobs: # this is where you define what you want to happen
         #         echo "::set-output name=mString::Hello world"
 
     useOutput: 
-        runs-on: ubuntu-latest
+        runs-on: [self-hosted, macOS, x64]
         needs: [createOutput]
         
         strategy:
@@ -54,5 +53,6 @@ jobs: # this is where you define what you want to happen
 
         - run: | 
             value=`cat foo.txt`
-            echo $value-${{matrix.vars}}
-        - run: ex2.sh 
+            echo $value - ${{matrix.vars}}
+        - run: ex2.sh
+          shell: bash 

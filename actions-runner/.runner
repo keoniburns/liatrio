@@ -1,0 +1,9 @@
+﻿{
+  "agentId": 22,
+  "agentName": "Keonis-MacBook-Pro",
+  "poolId": 1,
+  "poolName": "Default",
+  "serverUrl": "https://pipelines.actions.githubusercontent.com/k6yyzncthI0nte1HZKQDQj4jdFSkQEoY7MlroO20mfjKF4Q7GO",
+  "gitHubUrl": "https://github.com/keoniburns/liatrio",
+  "workFolder": "_work"
+}
