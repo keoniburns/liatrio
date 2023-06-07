@@ -53,5 +53,5 @@ jobs: # this is where you define what you want to happen
         #         echo "${{steps.name}}-${{matrix.vars}}"
 
         - run: | 
-            val = `cat my-artifact`
+            val = `cat foo.txt`
             echo $val-${{matrix.vars}}
