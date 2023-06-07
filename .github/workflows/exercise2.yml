@@ -1,5 +1,4 @@
 name: ex2
-
 #this only occurs on the specified trigger below
 on:
     #this is the trigger
@@ -17,7 +16,7 @@ jobs:
             - uses: actions/checkout@v2
             - name: giving the action the string
               id: foo
-              uses: ./.github/workflows/actions/myAction
+              uses: keoniburns/liatrio/.github/workflows/actions/myAction@master
               with:
                 mString: "im being passed"
             - id: set-output
