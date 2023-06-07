@@ -63,7 +63,7 @@ jobs:
         steps:
             - uses: actions/checkout@v3
             - id: foo
-              uses: ./.github/actions/myAction/action.yml
+              uses: ./.github/workflows/actions/myAction/action.yml
               with:
                 mString: 'im being passed'
             - run: |
