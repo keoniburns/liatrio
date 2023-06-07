@@ -20,7 +20,7 @@ jobs: # this is where you define what you want to happen
 
         steps: 
         - run: mkdir -p ./artifacts/
-        - run: echo "hello world" > ./artifact/foo.txt
+        - run: echo "hello world" > ./artifacts/foo.txt
 
         - uses: actions/upload-artifact@v3
           with:
