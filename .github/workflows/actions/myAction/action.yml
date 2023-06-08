@@ -1,25 +1,26 @@
 on:
   workflow_call:
+    
     name: 'create random string from input'
-    inputs:
-      mString:
-        required: true
-        default: 'default lmao'
+      inputs:
+        mString:
+          required: true
+          default: 'default lmao'
 
-    outputs:
-      random-string:
-        value: ${{ steps.random-string-gen.outputs.random-string }} 
-      
-    runs:
-      using: "composite"
-      steps:
-        - run: |
-            echo ${{inputs.mString}}
-          shell: bash
+      outputs:
+        random-string:
+          value: ${{ steps.random-string-gen.outputs.random-string }} 
+        
+      runs:
+        using: "composite"
+        steps:
+          - run: |
+              echo ${{inputs.mString}}
+            shell: bash
 
-        - id: random-string-gen
-          run: |
-            echo "random-string=${{ inputs.mString }}-${{ github.run_number}}-${{github.run_attempt}}" >> $GITHUB_OUTPUT
-          shell: bash
+          - id: random-string-gen
+            run: |
+              echo "random-string=${{ inputs.mString }}-${{ github.run_number}}-${{github.run_attempt}}" >> $GITHUB_OUTPUT
+            shell: bash
 
   
