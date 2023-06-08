@@ -7,19 +7,9 @@ on:
 jobs:
     
     call-composite:
-        runs-on: self-hosted
-        steps:
-            # - uses: actions/checkout@v2
-            - name: calling other workflow
-              uses: keoniburns/liatrio/.github/workflows/ex2.yml@master
-            - run: |
-                echo the workflow has been reused
-    
+        uses: ./.github/workflows/ex2.yml
+         
     call-simple:
-        runs-on: self-hosted
-        steps:
-            - name: calling simple workflow
-              uses: keoniburns/liatrio/.github/workflows/getting-started.yml@master
-            - run: |
-                echo simple workflow has been run
+        uses: ./.github/workflows/getting-started.yml
+
 
