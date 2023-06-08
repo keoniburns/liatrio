@@ -11,7 +11,7 @@ jobs:
         steps:
             # - uses: actions/checkout@v2
             - name: calling other workflow
-              uses: ./.github/workflows/ex2.yml
+              uses: keoniburns/liatrio/.github/workflows/ex2.yml@master
             - run: |
                 echo the workflow has been reused
     
@@ -19,7 +19,7 @@ jobs:
         runs-on: self-hosted
         steps:
             - name: calling simple workflow
-              uses: ./github/workflows/getting-started.yml
+              uses: keoniburns/liatrio/.github/workflows/getting-started.yml@master
             - run: |
                 echo simple workflow has been run
 
