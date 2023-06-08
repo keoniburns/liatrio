@@ -1,0 +1,10 @@
+#rest api
+    * 
+
+#graphQL
+    * allows you to request only data that you need (easier queries)
+    * rate-limits
+        - API's limit the amount of requests that can be made depending on your github tier
+        - with graphQL you can make a single request equivalent to 100 rest api calls 
+            - because of this they calculate the cost using the number of nodes visited
+    
