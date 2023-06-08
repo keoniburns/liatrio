@@ -1,15 +1,25 @@
 name: reusability test
 
 on:
-    push:
-        branches: ["master"]
-
+    workflow_dispatch:
+        # branches: ["master"]
+        
 jobs:
-    call-other-workflow:
+    
+    call-composite:
         runs-on: self-hosted
         steps:
-            - uses: actions/checkout@v2
+            # - uses: actions/checkout@v2
             - name: calling other workflow
-              uses: ./.github/workflows/actions/reusablewf
+              uses: ./.github/workflows/ex2.yml
             - run: |
                 echo the workflow has been reused
+    
+    call-simple:
+        runs-on: self-hosted
+        steps:
+            - name: calling simple workflow
+              uses: ./github/workflows/getting-started.yml
+            - run: |
+                echo simple workflow has been run
+
