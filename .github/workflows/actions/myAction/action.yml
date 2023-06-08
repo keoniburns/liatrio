@@ -22,8 +22,4 @@ on:
             echo "random-string=${{ inputs.mString }}-${{ github.run_number}}-${{github.run_attempt}}" >> $GITHUB_OUTPUT
           shell: bash
 
-        # - run: |
-        #     echo "${{ github.action_path }}" >> $GITHUB_PATH
-        #   shell: bash
-
   
