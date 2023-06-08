@@ -2,10 +2,10 @@ name: ex2-reusable
 #this only occurs on the specified trigger below
 on:
     #this is the trigger
-    # workflow_call:
-      push:  
-        #specifies which branches this is executed on
-        branches: ["master"]
+    workflow_call:
+    #   push:  
+    #     #specifies which branches this is executed on
+    #     branches: ["master"]
 
 jobs:
     passIn:
