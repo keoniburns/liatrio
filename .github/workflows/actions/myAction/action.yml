@@ -1,17 +1,15 @@
-on:
-  workflow_call:
-    
+
     name: 'create random string from input'
-      inputs:
+    inputs:
         mString:
           required: true
           default: 'default lmao'
 
-      outputs:
+    outputs:
         random-string:
           value: ${{ steps.random-string-gen.outputs.random-string }} 
         
-      runs:
+    runs:
         using: "composite"
         steps:
           - run: |
